@@ -2,7 +2,7 @@ FROM python:3.11-slim
 
 # --- OS deps ---
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    wget ca-certificates tar \
+    wget ca-certificates tar ffmpeg \
   && rm -rf /var/lib/apt/lists/*
 
 # Railway/build platforms can be amd64 or arm64.
