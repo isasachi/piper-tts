@@ -8,7 +8,7 @@ from pydantic import BaseModel
 app = FastAPI()
 
 PIPER_BIN = os.getenv("PIPER_BIN", "/usr/local/bin/piper")
-PIPER_MODEL = os.getenv("PIPER_MODEL", "/voices/en_US-ryan-medium.onnx")
+PIPER_MODEL = os.getenv("PIPER_MODEL", "/data/voices/en_US-ryan-medium.onnx")
 
 class TTSRequest(BaseModel):
     text: str

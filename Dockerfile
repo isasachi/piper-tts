@@ -41,7 +41,7 @@ ENV VOICE_DIR=/data/voices
 ENV PIPER_BIN=/usr/local/bin/piper
 
 # Pick a default model filename (we'll download it at runtime into $VOICE_DIR)
-ENV PIPER_MODEL=en_US-ryan-medium
+ENV PIPER_VOICE=en_US-ryan-medium
 ENV PIPER_MODEL_ONNX=/data/voices/en_US-ryan-medium.onnx
 ENV PIPER_MODEL_JSON=/data/voices/en_US-ryan-medium.onnx.json
 
