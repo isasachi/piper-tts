@@ -19,7 +19,7 @@ RUN set -eux; \
   wget -O /tmp/piper.tar.gz "https://github.com/rhasspy/piper/releases/download/${PIPER_TAG}/piper_linux_${PIPER_ARCH}.tar.gz"; \
   tar -xzf /tmp/piper.tar.gz -C /opt/piper; \
   rm -f /tmp/piper.tar.gz; \
-  PIPER_BIN="$(find /opt/piper -type f -name piper -maxdepth 4 | head -n 1)"; \
+  PIPER_BIN="$(find /opt/piper -maxdepth 4 -type f -name piper | head -n 1)"; \
   test -n "$PIPER_BIN"; \
   chmod 0755 "$PIPER_BIN"; \
   ln -sf "$PIPER_BIN" /usr/local/bin/piper
@@ -40,7 +40,7 @@ ENV PIPER_VOICE=en_US-ryan-medium
 ENV PIPER_MODEL_ONNX=/data/voices/en_US-ryan-medium.onnx
 ENV PIPER_MODEL_JSON=/data/voices/en_US-ryan-medium.onnx.json
 
-# IMPORTANT: your server code uses PIPER_MODEL
+# IMPORTANT: server.py reads PIPER_MODEL
 ENV PIPER_MODEL=/data/voices/en_US-ryan-medium.onnx
 
 ENV PORT=8080
